@@ -6,6 +6,7 @@ Stlye
 }
 
 body {
+    text-align: center;
     margin: 0 auto;
     width: 95%;
     font-family: veranda, sans-serif;
@@ -21,10 +22,10 @@ body {
     margin: 0 auto;
 }
 
-#col {
-    width: 95%;
-    height: 100px;
-    margin: 0 auto; 
+.col {
+    width: 15%;
+    height: 10px;
+     
 }
 
 /********************
@@ -34,15 +35,17 @@ body {
 /*  set up for widget css part 1, check your headers */  
 
 
-#main-header {
+.main-header {
     float: right;
     margin: 0;
-    width: 100%;     
+    width: 100%;
+    background: img src="images/FullSizeRender-8.jpg";
+    background-size: cover;
 }
  
 
 
-h1 {
+#banner {
     text-align: center;
     margin: 0;
     width: 100%;
@@ -78,6 +81,7 @@ p {
 	background: lightgreen;
 	margin-top: 6px;
 	margin-bottom: 6px;
+    padding: 16px;
 }
 
 main-nav a {
@@ -100,8 +104,10 @@ a:hover, a:focus {
 
 /*   For widggie file  */
 
-img {
-    min-width: 75%;
+
+li {
+    float: left;
+    min-width: inherit;
 }
 
 .wrapper {
@@ -131,6 +137,10 @@ background: red;
 padding: 20px;
 font-style: italic;
 font-size: 0.9em;
+}
+
+.fpimg{
+    max-width: 500px; 
 }
 
 /*******************
@@ -167,11 +177,7 @@ font-size: 0.9em;
 
 
 
-.reasons_why {
-    float: left;
-    width: 100%;
-    font-size: 1.2em;
-}
+
 
 #reasons_why thead {
     background: lightblue;
@@ -209,14 +215,9 @@ font-size: 0.9em;
     .main-footer  {
         min-height: calc(5vh - 12.1px);
 }
-    .col {
-    width: 70%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+
     
     .wrapper,
-    .col,
     .main-nav,
     .main-nav li {
        display: inline-block; 
