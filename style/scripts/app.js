@@ -1,1 +1,1 @@
-angular.module("preMoveInCheckListApp",[]);
+angular.module("preMoveInCheckListApp", []);
