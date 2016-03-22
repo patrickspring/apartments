@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <h1>SheffieldSquare</h1>
      
   <link rel="stylesheet" href="style/normalize.css" type="text/css">   
@@ -9,21 +11,32 @@
   <link href="style/main.css" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="style/responsive.css" type="text/css">   
  </head>
- <body ng-app="preMoveInCheckList">
-  <h2>Moving Check List</h2>
-   <div clas="list">
-    <input type="checkbox"/>
-    <label class="editing-label">what to do?</label>
-    <input class="editing-label" type="text"/>
-   </div>
-   <div class="actions">
-    <a href="">Do Over</a>
-    <a href="">Keep</a>
-    <a href="" clas="delete">Erase It</a>
-   </div>    
-    <script src="vendor/angular.js" type="text/javascript"></script>
-    <script src="scripts/app.js" type="text/javascript"></script>
-    <script src="scripts/howdy-do.js" type="text/javascript"></script>
+ <body ng-app="preMoveInCheckListApp">
+     
+       <h1 ng-click="howdyDo()">My Moving Check List</h1>
+  <div ng-controller="mainCtrl" class="list">
+    <div class="add">
+      <a href="" ng-click="addCheck()">+ Add a New Task</a>
+    </div>
+    <div class="item" ng-class="{'editing-item': editing, 'edited': check.edited}" ng-repeat="check in checks">
+      <input ng-model="check.completed" type="checkbox"/>
+      <label ng-hide="editing" ng-click="howdyDo()">
+        {{check.name}}</label>
+      <input ng-change="check.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="check.name" class="editing-label" type="text"/>
+      <div class="actions">
+        <a href="" ng-click=" editing = !editing">Do Over</a>
+        <a href="" ng-click="saveCheck(check)">Keep</a>
+        <a href="" ng-click="deleteCheck(check, $index)"  class="Delete">Erase It</a>
+      </div>
+     </div>
+    {{todos}}
+  </div>
+     <script src="vendor/angular.js" type="text/javascript"></script>
+     <script src="scripts/app.js" type="text/javascript"></script>
+     <script src="scripts/controllers/main.js" type="text/javascript"></script>
+     <script src="scripts/services/data.js" type="text/javascript"></script>
+     <script src="scripts/directives/howdy-do.js" type="text/javascript"></script>
+
      
     <div class="main-nav">
      <ul id="nav">
