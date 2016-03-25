@@ -18,8 +18,9 @@
     <div class="add">
       <a href="" ng-click="addCheck()">+ Add a New Task</a>
     </div>
-    <div class="item" ng-class="{'editing-item': editing, 'edited': check.edited}" ng-repeat="check in checks">
+    <div class="item" ng-class="{'editing-item': editing, 'edited': check.edited, 'completed': check.completed}" ng-repeat="check in checks | orderBy: 'completed'" ng-init="check.completed = false">
       <input ng-model="check.completed" type="checkbox"/>
+        <span ng-click="check.completed = !check.completed"></span>
       <label ng-hide="editing" ng-click="howdyDo()">
         {{check.name}}</label>
       <input ng-change="check.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="check.name" class="editing-label" type="text"/>
@@ -44,9 +45,14 @@
         <li><a href="floorplans.html">Floorplans</a></li>
         <li><a href="contact.html">Contact Us</a></li>
      </ul>
+        <ul>
+        <li><a href ="#forecast/Forecast"</a></li></ul>
     </div>
      <footer>
                <p>&copy; 2015 Patrick Spring</p>
         </footer> 
+     <ng controller= "AppCtrl">
+     <script src="scripts/services.js"></script>
+         </ng>
  </body>
 </html>

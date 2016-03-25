@@ -4,7 +4,7 @@ angular.module('preMoveInCheckListApp')
 .controller('mainCtrl', function($scope, dataService) {
   $scope.addCheck = function() {
     var check = {name: "This is a new check."};
-    $scope.checks.push(check);
+    $scope.checks.unshift(check);
   };
   
   $scope.howdyDo = dataService.howdyDo;
